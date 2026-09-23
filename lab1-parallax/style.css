@@ -1,0 +1,66 @@
+html, body {
+    height: 100%;
+    font-family: Calibri, sans-serif;
+    color: rgb(25, 25, 25);
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.75);
+    padding: 20px; /* adds space inside the card, between the content and the border of the element */
+    margin: 20px; /* adds space outside the card */
+    text-align: center; /* center-aligning the text */
+    border-radius: 15px; /* rounded corners*/
+}
+
+.section-1, .section-2, .section-3, .section-4, .section-5, .section-6, .section-7, .section-8, .section-9, .section-10 {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-attachment: fixed; /* this creates the parallax effect */
+    
+    display: flex;
+    justify-content: center; /* to horizontally center */
+    align-items: center; /*to vertically center */
+}
+
+.section-1 {
+    background-image: url('images/clouds.jpg'); /* source is linked in sources.md*/
+}
+
+.section-2 {
+    background-color: lightblue;
+}
+
+.section-3 {
+    background-image: url('images/c-train.jpg'); /* source is linked in sources.md*/
+}
+
+.section-4 {
+    background-color: #2063C1;
+}
+
+.section-5 {
+    background-image: url('images/calgary.jpg'); /* source is linked in sources.md*/
+}
+
+.section-6 {
+    background-color: #1E3765;
+}
+
+.section-7 {
+    background-image: url('images/c-tower.jpg'); /* source is linked in sources.md*/
+}
+
+.section-8 {
+    background-color: rgb(171, 198, 215);
+}
+
+.section-9 {
+    background-image: url('images/IMG_9398.jpg'); /* this is my image*/
+}
+
+.section-10 {
+    background-color: rgb(35, 75, 121);
+}
