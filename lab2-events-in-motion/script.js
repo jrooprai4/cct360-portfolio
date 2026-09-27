@@ -1,12 +1,11 @@
 const openbttn = document.getElementById('surprise');
 const closebttn = document.getElementById('goBack');
 
-
 // need if statements to check if the buttons exist on the page first bc both html pages are using the same script
 if (openbttn) {
     openbttn.addEventListener('click', () => {
-        // opens page2.html in a new window/tab
-        window.open('page2.html', '_blank');
+        // opens surprise.html in a new window/tab
+        window.open('surprise.html', '_blank');
     });}
 
 if (closebttn) {
@@ -14,3 +13,8 @@ if (closebttn) {
         // close this window/tab
         window.close();
     });}
+
+function switchImage() {
+    document.getElementById('imageSwitch').src = 'IMG_9398.jpg';
+    document.getElementById('imageSwitch').alt = 'describe the image'; // add proper description
+}
