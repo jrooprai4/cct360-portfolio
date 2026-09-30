@@ -16,7 +16,7 @@ if (closebttn) {
 
 // function to switch the image when the button is clicked
 function switchImage() {
-    document.getElementById('imageSwitch').src = 'images/thumbs-up-cat.png';
+    document.getElementById('imageSwitch').src = 'images/thumbs-up-cat.png'; // source is linked in sources.md
     document.getElementById('imageSwitch').alt = 'thumbs up cat';
     document.getElementById('imageSwitch').height = 200;
 }
