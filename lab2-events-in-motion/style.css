@@ -1,3 +1,23 @@
-p {
-    color: blue;
+html, body {
+    height: 100%;
+    font-family: Calibri, sans-serif;
+    background-color: lightgrey;
+    color: rgb(25, 25, 25);
+}
+
+button {
+    font-family: Calibri, sans-serif;
+    color: darkblue;
+    background-color: skyblue;
+}
+
+div {
+    display: flex;
+    /* justify-content: center; to horizontally center */ /* don't technically need this bc it's centered by default */
+    align-items: center; /* to vertically center */
+    flex-direction: column; /* to stack the elements vertically */
+}
+
+hr {
+    margin-top: 30px;
 }

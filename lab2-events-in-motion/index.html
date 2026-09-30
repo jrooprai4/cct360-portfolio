@@ -7,13 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p>Click the button below to see a surprise!</p>
-    <button id="surprise">click me :P</button>
+    <div>
+        <p>Click the button below to see a surprise!</p>
+    </div>
 
-    <p>wow, a cat! click the button to switch the image</p>
-    <button onclick="switchImage()">click here!</button>
-    <br>
-    <img id="imageSwitch" src="cat.png" alt="image of a cat"> <!-- change the images for this to something else -->
+    <div>
+        <button id="surprise">Click here!</button>
+    </div>
+
+    <hr>
+
+    <div>
+        <p>It's a cat! Click the button below to switch the image:</p>
+        <button onclick="switchImage()">Switch!</button>
+        <br>
+        <img id="imageSwitch" src="images/orange-cat.png" height="300" alt="orange cat">
+    </div>
 
     <script src="script.js"></script>
 </body>

@@ -16,11 +16,12 @@ if (closebttn) {
 
 // function to switch the image when the button is clicked
 function switchImage() {
-    document.getElementById('imageSwitch').src = 'IMG_9398.jpg';
-    document.getElementById('imageSwitch').alt = 'describe the image'; // add proper description
+    document.getElementById('imageSwitch').src = 'images/thumbs-up-cat.png';
+    document.getElementById('imageSwitch').alt = 'thumbs up cat';
+    document.getElementById('imageSwitch').height = 200;
 }
 
 // shows an alert every 10 seconds
 setInterval(function() {
-    alert("peekaboooooo :)");
+    alert("peekabooo :)");
 }, 10000); 
