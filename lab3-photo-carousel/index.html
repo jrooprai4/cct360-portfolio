@@ -7,7 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p>photo carousel</p>
+    <button class="toggle" data-target="seq1">sequence 1</button>
+    <button class="toggle" data-target="seq2">sequence 2</button>
+    <!-- the data-target attribute links the button to the id of the div it controls -->
+
+    <div id="seq1" class="content">
+        <p>this will be sequence 1</p>
+    </div>
+
+    <div id="seq2" class="content">
+        <p>this will be sequence 2</p>
+    </div>
 
     <script src="script.js"></script>
 </body>

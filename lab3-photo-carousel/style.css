@@ -1,3 +1,6 @@
-p {
-    color: blue;
+/* hiding the content sections by default */
+.content {
+    display: none;
+
+    /* add other styling stuff later */
 }
