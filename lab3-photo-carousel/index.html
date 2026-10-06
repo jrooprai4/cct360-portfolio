@@ -7,20 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h4>Click the buttons below for each sequence:</h4>
-    <button class="toggle" data-target="seq1">Sequence 1</button>
-    <button class="toggle" data-target="seq2">Sequence 2</button>
-    <!-- the data-target attribute links the button to the id of the div it controls -->
+    <div id="seqbuttons">
+        <h3>Click the buttons below for each sequence:</h3>
+        <button class="toggle" data-target="seq1">Sequence 1</button>
+        <button class="toggle" data-target="seq2">Sequence 2</button>
+        <!-- the data-target attribute links the button to the id of the div it controls -->    
+    </div>
 
     <div id="seq1" class="content">
         <!-- morning to night -->
         <p>Toronto Skyline - Morning to Night</p>
-        <br>
-        <img src="images/morning.png" alt="toronto skyline in the morning" id="morning1" height="150">
-        <img src="images/afternoon.png" alt="toronto skyline in the afternoon" id="afternoon1" height="150">
-        <img src="images/evening.png" alt="toronto skyline in the evening" id="evening1" height="150">
-        <img src="images/night.png" alt="toronto skyline at night" id="night1" height="150">
-        <br>
+        <div class="images">
+            <img src="images/morning.png" alt="toronto skyline in the morning" id="morning1" height="150">
+            <img src="images/afternoon.png" alt="toronto skyline in the afternoon" id="afternoon1" height="150">
+            <img src="images/evening.png" alt="toronto skyline in the evening" id="evening1" height="150">
+            <img src="images/night.png" alt="toronto skyline at night" id="night1" height="150">
+            <!-- source for images is in sources.md -->
+        </div>
         <p>↑ Click each image to reverse the sequence ↑</p>
         <p>Refresh the page to reset it</p>
     </div>
@@ -28,12 +31,13 @@
     <div id="seq2" class="content">
         <!-- evening to afternoon -->
         <p>Toronto Skyline - Evening to Afternoon</p>
-        <br>
-        <img src="images/evening.png" alt="toronto skyline in the evening" id="evening2" height="150">
-        <img src="images/night.png" alt="toronto skyline at night" id="night2" height="150">
-        <img src="images/morning.png" alt="toronto skyline in the morning" id="morning2" height="150">
-        <img src="images/afternoon.png" alt="toronto skyline in the afternoon" id="afternoon2" height="150">
-        <br>
+        <div class="images">
+            <img src="images/evening.png" alt="toronto skyline in the evening" id="evening2" height="150">
+            <img src="images/night.png" alt="toronto skyline at night" id="night2" height="150">
+            <img src="images/morning.png" alt="toronto skyline in the morning" id="morning2" height="150">
+            <img src="images/afternoon.png" alt="toronto skyline in the afternoon" id="afternoon2" height="150">
+            <!-- same images as above, so source is in sources.md -->
+        </div>
         <p>↑ Click each image to randomize the sequence ↑</p>
         <p>Refresh the page to reset it</p>
     </div>
