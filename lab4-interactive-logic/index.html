@@ -7,7 +7,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p>Please input a number:</p>
+    <dialog id="confirm">
+        <div id="dialogdiv">
+            <p>pick an option:</p>
+            <button id="option1btn">option 1</button>
+            <button id="option2btn">option 2</button>
+        </div>
+    </dialog>
+
+    <div id="option1">
+        <h2>Option 1: Password Strength Checker</h2>
+        <input type="text" id="passwordInput" placeholder="Enter a password">
+        <h4>Strength: <span id="strength">none</span></h4>
+        <p>Note - Your password must meet the following requirements:</p>
+        <ul>
+            <li>Minimum of 8 characters</li>
+            <li>At least 2 uppercase, and 2 lowercase letters</li>
+            <li>At least 2 numerical digits</li>
+            <li>At least 2 special characters</li>
+        </ul>
+    </div>
+
+    <div id="option2">
+        <h2>Option 2: Disco Party🥳</h2>
+        <div id="disco">
+            <div id="purplebox1" class="box"></div>
+            <div id="pinkbox1" class="box"></div>
+            <div id="bluebox" class="box"></div>
+            <div id="redbox" class="box"></div>
+            <div id="purplebox2" class="box"></div>
+            <div id="pinkbox2" class="box"></div>
+        </div>     
+    </div>
 
     <script src="script.js"></script>
 </body>

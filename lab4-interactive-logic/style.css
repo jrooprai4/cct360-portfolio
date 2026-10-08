@@ -1,3 +1,49 @@
-p {
-    color: blue;
+#option1 {
+    display: none;
+}
+
+#option2 {
+    display: none;
+}
+
+dialog {
+    border: 4px solid darkblue;
+    border-radius: 15px;
+    height: 25%;
+    width: 25%;
+}
+
+#dialogdiv {
+    display: block;
+    text-align: center;
+}
+
+#disco {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* creates 3 equal, flexible columns */
+    grid-template-rows: repeat(2, 1fr); /* creates 2 equal, flexible rows */
+    width: 100%;
+    height: 100%;
+}
+
+#purplebox1, #purplebox2 {
+    background-color: purple;
+}
+
+#pinkbox1, #pinkbox2 {
+    background-color: hotpink;
+}
+
+#bluebox {
+    background-color: blue;
+}
+
+#redbox {
+    background-color: red;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
 }
