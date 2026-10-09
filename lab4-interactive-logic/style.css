@@ -1,9 +1,28 @@
+html, body {
+    height: 100%;
+    font-family: Calibri, sans-serif;
+    background-color: lightgrey;
+    color: rgb(25, 25, 25);
+}
+
+button {
+    font-family: Calibri, sans-serif;
+    color: #1E3765;
+    background-color: skyblue;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
 #option1 {
     display: none;
+
+    margin: 10px;
 }
 
 #option2 {
     display: none;
+
+    margin-top: 10px;
 }
 
 dialog {
