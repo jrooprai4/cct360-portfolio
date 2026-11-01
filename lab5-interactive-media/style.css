@@ -1,17 +1,28 @@
-p {
-    color: blue;
-}
-
 dialog {
     height: 20%;
     width: 20%;
 }
 
 dialog::backdrop {
-    background-color: rgb(25, 25, 25, 0.5); /* last value is for transparency */
+    background-color: rgb(25, 25, 25, 0.5);  /* last value is for transparency */
     backdrop-filter: blur(3px);
 }
 
-#dialogdiv {
+#dialog-div {
     background-color: green;
+}
+
+#scroll-container {
+    display: flex;
+    flex-flow: row nowrap;  /* flex layout in a single row */
+    overflow-x: auto;  /* enable horizontal scrolling */
+    overflow-y: hidden;  /* prevent vertical overflow */
+
+    /* ui stuff */
+    gap: 50px;
+}
+
+.scroll-item {
+    flex: 0 0 200px;  /* prevent items from shrinking below defined width */
+    background-color: blue;
 }

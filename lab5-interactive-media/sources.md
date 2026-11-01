@@ -3,6 +3,6 @@
 1. [https://pixabay.com/sound-effects/nature-020188-bird-park-ambience-74610/](https://pixabay.com/sound-effects/nature-020188-bird-park-ambience-74610/)
 
 
-### Image Sources:
+### Image and Video Sources:
 
-1. []()
+all images and videos included on this webpage are my own
