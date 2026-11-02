@@ -1,4 +1,5 @@
 // clicking on the dialog tag takes the user to the website and starts the background audio
+
 const dialog = document.getElementById('enter');
 const dialogDiv = document.getElementById('dialog-div');
 const audio = document.getElementById('audio');
@@ -17,47 +18,71 @@ showDialog();
 
 // ----------------------------------------------------------------------------------------------
 
-// play, pause, and reset buttons, and progress bars for the videos
 
-const vid1 = document.getElementById('vid1');
-const vid2 = document.getElementById('vid2');
-const vid3 = document.getElementById('vid3');
+// play/pause and reset buttons, and progress bars for the videos
 
-const play1 = document.getElementById('play1');
-const play2 = document.getElementById('play2');
-const play3 = document.getElementById('play3');
-
-const pause1 = document.getElementById('pause1');
-const pause2 = document.getElementById('pause2');
-const pause3 = document.getElementById('pause3');
-
-const reset1 = document.getElementById('reset1');
-const reset2 = document.getElementById('reset2');
-const reset3 = document.getElementById('reset3');
-
-
-play1.addEventListener('click', () => playVid(vid1));
-play2.addEventListener('click', () => playVid(vid2));
-play3.addEventListener('click', () => playVid(vid3));
-
-pause1.addEventListener('click', () => pauseVid(vid1));
-pause2.addEventListener('click', () => pauseVid(vid2));
-pause3.addEventListener('click', () => pauseVid(vid3));
-
-reset1.addEventListener('click', () => resetVid(vid1));
-reset2.addEventListener('click', () => resetVid(vid2));
-reset3.addEventListener('click', () => resetVid(vid3));
-
-
-function playVid(video) {
-    video.play();
+// helper function to format seconds into mm:ss format
+function formatTime(seconds) {
+    if (isNaN(seconds)) return "00:00";  // if seconds is not a number, return 0
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
 }
 
-function pauseVid(video) {
-    video.pause();
-}
+// list of vid containers
+const containers = document.querySelectorAll('.vid-container');
 
-function resetVid(video) {
-    video.currentTime = 0;
-    video.pause();
-}
+// loop through each vid container
+containers.forEach((container) => {
+    // elements strictly inside this specific container
+    const video = container.querySelector('.videos');
+    const playBtn = container.querySelector('.play');
+    const resetBtn = container.querySelector('.reset');
+    const progressBar = container.querySelector('.progress-slider');
+    const timeDisplay = container.querySelector('.time-display');
+
+    // play/pause button
+    playBtn.addEventListener('click', () => {
+        if (video.paused) {
+            video.play();
+            playBtn.textContent = 'Pause';
+        } else {
+            video.pause();
+            playBtn.textContent = 'Play';
+        }
+    });
+
+    // reset button
+    resetBtn.addEventListener('click', () => {
+        video.pause();  // stops playback
+        video.currentTime = 0;  // resets video's time to 0
+        progressBar.value = 0;  // resets progress bar to 0
+        playBtn.textContent = 'Play';  // resets play button to say play
+    });
+
+    // initialize progress bar's max value and time display when video metadata is loaded
+    video.addEventListener('loadedmetadata', () => {
+        progressBar.max = Math.floor(video.duration);
+        timeDisplay.textContent = `${formatTime(0)} / ${formatTime(video.duration)}`;
+    });
+
+    // update progress bar and time display as video plays (if user is not dragging the bar)
+    video.addEventListener('timeupdate', () => {
+        if (!progressBar.classList.contains('is-dragging')) {  // if progress bar is not being dragged
+            progressBar.value = Math.floor(video.currentTime);  // update bar to current time
+        }
+        timeDisplay.textContent = `${formatTime(video.currentTime)} / ${formatTime(video.duration)}`;
+    });
+
+    // update progress bar and time display as user drags the slider
+    progressBar.addEventListener('input', () => {
+        progressBar.classList.add('is-dragging');
+        timeDisplay.textContent = `${formatTime(progressBar.value)} / ${formatTime(video.duration)}`;
+    });
+
+    // update video current time once user releases slider
+    progressBar.addEventListener('change', () => {
+        progressBar.classList.remove('is-dragging');
+        video.currentTime = progressBar.value;
+    });
+});
