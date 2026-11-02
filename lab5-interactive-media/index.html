@@ -14,17 +14,9 @@
         </div>
     </dialog>
 
-    <p>Control the background audio here:</p>
-    <audio id="audio" autoplay controls loop src="audio/bird-park-ambience.mp3" type="audio/mp3">
-        <!-- source for this audio is in sources.md -->
-        This broswer does not support this audio :(
-    </audio>
-
-    <hr>
-
-    <h2>My Calgary Trip - A Small Gallery</h2>
+    <h1>My Calgary Trip - A Small Gallery</h1>
     <div id="scroll-container">
-        <div class="scroll-item">
+        <div class="scroll-item pics">
             <img src="images/IMG_9164.jpg" alt="emerald lake" width="300">
             <!-- this is my image -->
         </div>
@@ -40,7 +32,7 @@
                 <button class="reset">Reset</button>
             </div>
         </div>
-        <div class="scroll-item">
+        <div class="scroll-item pics">
             <img src="images/IMG_9231.jpg" alt="banff" height="400">
             <!-- this is my image -->
         </div>
@@ -56,7 +48,7 @@
                 <button class="reset">Reset</button>
             </div>
         </div>
-        <div class="scroll-item">
+        <div class="scroll-item pics">
             <img src="images/IMG_9259.jpg" alt="sunshine village" height="400">
             <!-- this is my image -->
         </div>
@@ -72,12 +64,22 @@
                 <button class="reset">Reset</button>
             </div>
         </div>
-        <div class="scroll-item">
+        <div class="scroll-item pics">
             <img src="images/IMG_9330.jpg" alt="calgary public library" width="300">
             <!-- this is my image -->
         </div>
     </div>
 
+    <hr>
+
+    <p>Control the background audio here:</p>
+    <div id="audio-div">
+        <audio id="audio" autoplay controls loop src="audio/bird-park-ambience.mp3" type="audio/mp3">
+            <!-- source for this audio is in sources.md -->
+            This broswer does not support this audio :(
+        </audio>
+    </div>
+    
 
     <script src="script.js"></script>
 </body>
