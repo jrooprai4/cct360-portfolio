@@ -37,7 +37,7 @@ async function getData() {
 
         // if there are no games
         if (games.length == 0) {
-            gamesContainer.innerHTML = '<p>No NBA games scheduled today :(</p>';
+            gamesContainer.innerHTML = '<p id="games-message">No NBA games scheduled today :(</p>';
         }
 
         // loop through each game and display data
@@ -75,7 +75,7 @@ async function getData() {
             }
 
             if (isFinal) {
-                statusText = 'Final';
+                statusText = 'FINAL';
                 statusClass = 'final';
             }
 
@@ -100,30 +100,32 @@ async function getData() {
             card.className = 'game-card';
             
             card.innerHTML = `
-                <div class='game-status ${statusClass}'>
-                    ${statusText}
-                    <span class='location'>
+                <div class="game-status">
+                    <span class="${statusClass}">
+                        ${statusText}
+                    </span>
+                    <span class="location">
                         ${arena} (${city}, ${stateLocation})
                     </span>
                 </div>
 
-                <div class='team'>
-                    <span class='team-name ${awayWin ? 'winner' : ''}'>
+                <div class="team">
+                    <span class="team-name ${awayWin ? "winner" : ""}">
                         ${away.team.displayName}
                     </span>
-                    <span class='score'>${awayScore}</span>
+                    <span class="score ${awayWin ? "winner" : ""}">${awayScore}</span>
                 </div>
 
-                <div class='team'>
-                    <span class='team-name ${homeWin ? 'winner' : ''}'>
+                <div class="team">
+                    <span class="team-name ${homeWin ? "winner" : ""}">
                         ${home.team.displayName}
                     </span>
-                    <span class='score'>${homeScore}</span>
+                    <span class="score ${homeWin ? "winner" : ""}">${homeScore}</span>
                 </div>
 
-                <div class='game-time'>
-                    ${isLive ? 'Game clock: ' : ''}
-                    ${gameTime || ''}
+                <div class="game-time">
+                    ${isLive ? "Game clock: " : ""}
+                    ${gameTime || ""}
                 </div>
             `;
 
@@ -137,6 +139,14 @@ async function getData() {
 
     catch (error) {
         console.error('Error retrieving game data:', error);
+
+        gamesContainer.innerHTML = `
+            <p id="games-message">
+                Unable to load games :( Please try refreshing.
+            </p>
+        `;
+
+        lastUpdated.textContent = 'Connection error :(';
     }
 }
 
