@@ -14,7 +14,7 @@ document.getElementById('today').textContent =
 
 // getting nba data from api
 
-const url = 'http://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard';
+const url = 'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard';
 
 async function getData() {
     const gamesContainer = document.getElementById('games');
