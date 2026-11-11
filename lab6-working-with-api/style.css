@@ -57,6 +57,21 @@ button:hover {
     transition: 0.3s ease;
 }
 
+/* if the game is live, the border will be red as well as the hover */
+.game-card-live {
+    display: block;
+    border-radius: 16px;
+    border: 2px solid #c73636;
+    background-color: #1e293b;
+    padding: 30px;
+    color: lightgrey;
+}
+
+.game-card-live:hover {
+    box-shadow: 0 0 15px 4px rgba(199, 54, 54, 0.6);
+    transition: 0.3s ease;
+}
+
 .game-status {
     border-bottom: 1px solid rgb(59, 130, 246);
     padding-bottom: 15px;

@@ -14,6 +14,7 @@ document.getElementById('today').textContent =
 
 // getting nba data from api
 
+// api link
 const url = 'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard';
 
 async function getData() {
@@ -65,7 +66,7 @@ async function getData() {
             const isLive = state === 'in';
             const isFinal = state === 'post';
 
-            let statusText = 'Upcoming';
+            let statusText = 'Upcoming...';
             let statusClass = '';
 
             // check the game's status and update text and class accordingly
@@ -88,7 +89,7 @@ async function getData() {
             const awayWin = isFinal && (Number(awayScore) > Number(homeScore));  // same thing for away
 
             // get game time/clock
-            let gameTime = status.type.shortDetail;
+            let gameTime = status.type.detail;
 
             // if the game hasn't started yet
             if (!isLive && !isFinal) {
@@ -97,8 +98,15 @@ async function getData() {
 
             // create game card
             const card = document.createElement('div');
-            card.className = 'game-card';
-            
+
+            // if the game is live, assign the live class to the card
+            if (isLive) {
+                card.className = 'game-card-live';
+            }
+            else {  // otherwise, assign the default class
+                card.className = 'game-card';
+            }
+
             card.innerHTML = `
                 <div class="game-status">
                     <span class="${statusClass}">
